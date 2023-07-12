@@ -54,7 +54,7 @@ const Home: NextPage = () => {
   const [showHelpDialog, setShowHelpDialog] = useState(false);
   const [showSettingsDialog, setShowSettingsDialog] = useState(false);
   const [showSorryDialog, setShowSorryDialog] = React.useState(false);
-  const [showSignInDialog, setShowSignInDialog] = React.useState(false);
+  const [showSignInDialog, setShowSignInDialog] = React.useState(true);
   const [hasSaved, setHasSaved] = useState(false);
   const [showWeChatPayDialog, setShowWeChatPayDialog] = useState(false);
   const [showQQDialog, setShowQQDialog] = useState(false);
@@ -181,7 +181,7 @@ const Home: NextPage = () => {
       AutoGPT Next Web<span className="ml-1 text-amber-500/90">Pro</span>
     </>
   );
-
+console.log(status)
   const shouldShowSave =
     status === "authenticated" &&
     isAgentStopped &&
