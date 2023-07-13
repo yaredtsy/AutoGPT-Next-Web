@@ -125,14 +125,13 @@ const ChatWindow = ({
   return (
     <div
       className={
-        "border-translucent flex w-full flex-col rounded-2xl border-2 border-white/20 bg-zinc-900 text-white shadow-2xl drop-shadow-lg " +
-        (className ?? "")
+        "border-translucent flex w-full flex-col rounded-2xl border-2 border-white/20 bg-zinc-900 text-white shadow-2xl drop-shadow-lg "
       }
     >
       <MacWindowHeader title={title} messages={messages} onSave={onSave} />
       <div
         className={clsx(
-          "mb-2 mr-2 ",
+          "mb-2 mr-2",
           (fullscreen && "max-h-[75vh] flex-grow overflow-auto") ||
             "window-heights"
         )}
@@ -164,7 +163,7 @@ const ChatWindow = ({
 
         {messages.length === 0 && (
           <>
-            <Expand delay={0.8} type="spring">
+            <Expand delay={0.} type="spring">
               <ChatMessage
                 message={{
                   type: MESSAGE_TYPE_SYSTEM,
@@ -183,7 +182,7 @@ const ChatWindow = ({
           </>
         )}
       </div>
-      {displaySettings && (
+      {/* {displaySettings && (
         <div className="flex flex-col items-center justify-center md:flex-row">
           <SwitchContainer label={t("web-search")}>
             <Switch
@@ -200,7 +199,7 @@ const ChatWindow = ({
             />
           </SwitchContainer>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
@@ -297,7 +296,7 @@ const MacWindowHeader = (props: HeaderProps) => {
 
   return (
     <div className="flex items-center gap-1 overflow-visible rounded-t-3xl p-3">
-      <PopIn delay={0.4}>
+      {/* <PopIn delay={0.4}>
         <div className="h-3 w-3 rounded-full bg-red-500" />
       </PopIn>
       <PopIn delay={0.5}>
@@ -305,7 +304,7 @@ const MacWindowHeader = (props: HeaderProps) => {
       </PopIn>
       <PopIn delay={0.6}>
         <div className="h-3 w-3 rounded-full bg-green-500" />
-      </PopIn>
+      </PopIn> */}
       <Expand
         delay={1}
         className="invisible flex flex-grow font-mono text-sm font-bold text-gray-500 sm:ml-2 md:visible"
@@ -348,7 +347,7 @@ const MacWindowHeader = (props: HeaderProps) => {
         </div>
       )}
 
-      <Menu
+      {/* <Menu
         icon={<CgExport />}
         name={t("common:export")}
         onChange={() => null}
@@ -358,7 +357,7 @@ const MacWindowHeader = (props: HeaderProps) => {
           input: `bg-[#3a3a3a] animation-duration text-left py-1 px-2 text-sm font-mono rounded-lg text-gray/50 border-[2px] border-white/30 font-bold transition-all sm:py-0.5 hover:border-[#1E88E5]/40 hover:bg-[#6b6b6b] focus-visible:outline-none focus:border-[#1E88E5]`,
           option: "w-full py-[1px] md:py-0.5",
         }}
-      />
+      /> */}
     </div>
   );
 };
@@ -447,12 +446,12 @@ const FAQ = () => {
     <Trans i18nKey="faq" ns="chat">
       <p>
         If you are facing issues, please head over to our&nbsp;
-        <a
+        {/* <a
           href="https://github.com/Dogtiti/AutoGPT-Next-Web/issues"
           className="text-sky-500"
-        >
+        > */}
           Issue
-        </a>
+        {/* </a> */}
       </p>
     </Trans>
   );

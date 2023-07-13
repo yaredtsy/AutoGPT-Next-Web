@@ -26,8 +26,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useSettings } from "../hooks/useSettings";
 import { SorryDialog } from "../components/SorryDialog";
 import { SignInDialog } from "../components/SignInDialog";
-import WeChatPayDialog from "../components/WeChatPayDialog";
-import QQDialog from "../components/QQDialog";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useGuestMode } from "../hooks/useGuestMode";
@@ -54,7 +52,7 @@ const Home: NextPage = () => {
   const [showHelpDialog, setShowHelpDialog] = useState(false);
   const [showSettingsDialog, setShowSettingsDialog] = useState(false);
   const [showSorryDialog, setShowSorryDialog] = React.useState(false);
-  const [showSignInDialog, setShowSignInDialog] = React.useState(true);
+  const [showSignInDialog, setShowSignInDialog] = React.useState(false);
   const [hasSaved, setHasSaved] = useState(false);
   const [showWeChatPayDialog, setShowWeChatPayDialog] = useState(false);
   const [showQQDialog, setShowQQDialog] = useState(false);
@@ -74,7 +72,7 @@ const Home: NextPage = () => {
     // Momentarily always run
     setTimeout(() => {
       if (savedModalData == null) {
-        setShowHelpDialog(true);
+        setShowHelpDialog(false);
       }
     }, 1800);
 
@@ -113,7 +111,7 @@ const Home: NextPage = () => {
     if (
       session === null &&
       process.env.NODE_ENV === "production" &&
-      authEnabled
+      authEnabled && false
     ) {
       setShowSignInDialog(true);
       return;
@@ -181,7 +179,7 @@ const Home: NextPage = () => {
       AutoGPT Next Web<span className="ml-1 text-amber-500/90">Pro</span>
     </>
   );
-console.log(status)
+
   const shouldShowSave =
     status === "authenticated" &&
     isAgentStopped &&
@@ -229,14 +227,9 @@ console.log(status)
         show={showSignInDialog}
         close={() => setShowSignInDialog(false)}
       />
-      <WeChatPayDialog
-        show={showWeChatPayDialog}
-        close={() => setShowWeChatPayDialog(false)}
-      />
-      <QQDialog show={showQQDialog} close={() => setShowQQDialog(false)} />
       <main className="flex min-h-screen flex-row">
         <Drawer
-          showHelp={() => setShowHelpDialog(true)}
+          showHelp={() => setShowHelpDialog(false)}
           showSettings={() => setShowSettingsDialog(true)}
           showQQ={() => setShowQQDialog(true)}
           showWeChatPay={() => setShowWeChatPayDialog(true)}
@@ -255,7 +248,7 @@ console.log(status)
               id="title"
               className="relative flex flex-col items-center font-mono"
             >
-              <div className="flex flex-row items-start shadow-2xl">
+              {/* <div className="flex flex-row items-start shadow-2xl">
                 <span className="text-4xl font-bold text-[#C0C0C0] xs:text-5xl sm:text-6xl">
                   Auto
                 </span>
@@ -268,7 +261,7 @@ console.log(status)
               </div>
               <div className="mt-1 text-center font-mono text-[0.7em] font-bold text-white">
                 <p>{t("sub-title")}</p>
-              </div>
+              </div> */}
             </div>
 
             <Expand className="flex w-full flex-row">

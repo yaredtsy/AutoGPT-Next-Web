@@ -176,9 +176,9 @@ export const SettingsDialog: React.FC<{
       close={close}
       footerButton={
         <>
-          <Button className="bg-red-400 hover:bg-red-500" onClick={handleReset}>
+          {/* <Button className="bg-red-400 hover:bg-red-500" onClick={handleReset}>
             {t("common:reset")}
-          </Button>
+          </Button> */}
           <Button onClick={handleSave}>{t("common:save")}</Button>
         </>
       }
@@ -247,10 +247,10 @@ export const SettingsDialog: React.FC<{
             type="password"
           />
         )}
-        <Accordion
+        {/* <Accordion
           child={advancedSettings}
           name={t("advanced-settings")}
-        ></Accordion>
+        ></Accordion> */}
       </div>
       <Trans i18nKey="api-key-notice" ns="settings">
         <strong className="mt-10">

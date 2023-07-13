@@ -48,7 +48,7 @@ const Drawer = ({
     const checkScreenWidth = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth >= 768) {
-        setShowDrawer(true);
+        setShowDrawer(false);
       } else {
         setShowDrawer(false);
       }
@@ -134,20 +134,20 @@ const Drawer = ({
           {authEnabled && (
             <AuthItem session={session} signIn={signIn} signOut={signOut} />
           )}
-          <DrawerItem
+          {/* <DrawerItem
             icon={<FaQuestionCircle />}
             text="help"
             onClick={showHelp}
-          />
+          /> */}
           <DrawerItem icon={<FaCog />} text="settings" onClick={showSettings} />
-          {showDonation && (
+          {/* {showDonation && (
             <DrawerItem
               icon={<FaDonate />}
               text="support"
               onClick={showWeChatPay}
             />
-          )}
-          {authEnabled && (
+          )} */}
+          {false && (
             <Fragment>
               <DrawerItem
                 icon={<FaQq />}
@@ -163,7 +163,7 @@ const Drawer = ({
               />
             </Fragment>
           )}
-          <DrawerItem
+          {/* <DrawerItem
             icon={<FaGithub />}
             text="GitHub"
             href="https://github.com/Dogtiti/AutoGPT-Next-Web"
@@ -173,7 +173,7 @@ const Drawer = ({
             icon={<FaLanguage />}
             text="language"
             onClick={handleLanguageChange}
-          />
+          /> */}
           {env.NEXT_PUBLIC_FF_SUB_ENABLED ||
             (router.query.pro && (
               <ProItem

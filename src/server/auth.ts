@@ -6,6 +6,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "./db";
 import { serverEnv } from "../env/schema.mjs";
+import { t } from "i18next";
 
 /**
  * Module augmentation for `next-auth` types
@@ -19,17 +20,7 @@ const providers = [
     clientId: serverEnv.GOOGLE_CLIENT_ID ?? "",
     clientSecret: serverEnv.GOOGLE_CLIENT_SECRET ?? "",
     allowDangerousEmailAccountLinking: true,
-  }),
-  GithubProvider({
-    clientId: serverEnv.GITHUB_CLIENT_ID ?? "",
-    clientSecret: serverEnv.GITHUB_CLIENT_SECRET ?? "",
-    allowDangerousEmailAccountLinking: true,
-  }),
-  DiscordProvider({
-    clientId: serverEnv.DISCORD_CLIENT_ID ?? "",
-    clientSecret: serverEnv.DISCORD_CLIENT_SECRET ?? "",
-    allowDangerousEmailAccountLinking: true,
-  }),
+  })
 ];
 
 /**
@@ -53,7 +44,7 @@ export const authOptions: NextAuthOptions = {
   secret: serverEnv.NEXTAUTH_SECRET,
   theme: {
     colorScheme: "dark",
-    logo: "https://auto-agentgpt.com/logo-white.svg",
+    // logo: "https://auto-agentgpt.com/logo-white.svg",
   },
 };
 
