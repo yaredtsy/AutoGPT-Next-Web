@@ -128,9 +128,12 @@ const Drawer = ({
               userAgents.length === 0 && <div>{t("create-agent")}</div>}
           </ul>
         </div>
-
+<div className="mt-auto"> 
+{session &&<span className="ml-2">{session.user.name}</span>}
+</div>
         <div className="flex flex-col gap-1">
           <hr className="my-5 border-white/20" />
+         
           {authEnabled && (
             <AuthItem session={session} signIn={signIn} signOut={signOut} />
           )}
