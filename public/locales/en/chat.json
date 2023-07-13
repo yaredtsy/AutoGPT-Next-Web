@@ -1,6 +1,6 @@
 {
-  "create-agent-and-deploy": "> Create an agent by adding a name / goal, and hitting deploy!",
-  "provide-api-key-via-settings": "You can first provide your own OpenAI API key via the settings tab!",
+  "create-agent-and-deploy": "> Create an Auto agent by adding a Name / Goals",
+  "provide-api-key-via-settings": "Please provide your OpenAI API key first on the settings tab!",
   "donate-help": " 💝️ Help support the advancement of AutoGPT Next Web. 💝 <br /> Please consider donating help fund our high infrastructure costs.",
   "donate-now": "Donate Now",
   "restart": "Restart if this takes more than 30 seconds",
@@ -18,7 +18,7 @@
   "all-tasks-completed": "All tasks completed. Shutting down.",
   "manually-shutdown": "The current task has been manually shutdown.",
   "task-marked-as-complete": "Task marked as complete!",
-  "new-goal": "Embarking on a new goal:",
+  "new-goal": "AutoGPT goal(s):",
   "added-task": "Added task:",
   "thinking": "Thinking...",
   "executing": "Executing: ",
