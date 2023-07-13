@@ -50,10 +50,7 @@ export const serverSchema = z.object({
 
   GOOGLE_CLIENT_ID: requiredAuthEnabledForProduction(),
   GOOGLE_CLIENT_SECRET: requiredAuthEnabledForProduction(),
-  GITHUB_CLIENT_ID: requiredAuthEnabledForProduction(),
-  GITHUB_CLIENT_SECRET: requiredAuthEnabledForProduction(),
-  DISCORD_CLIENT_ID: requiredAuthEnabledForProduction(),
-  DISCORD_CLIENT_SECRET: requiredAuthEnabledForProduction(),
+  
 
   STRIPE_SECRET_KEY: z.string().optional(),
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
@@ -77,10 +74,6 @@ export const serverEnv = {
   OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
-  DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
-  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
 
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
   STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
